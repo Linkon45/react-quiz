@@ -27,7 +27,6 @@ export const AuthProvider = ({ children }) => {
     });
     return unsubscribe;
   }, []);
-  
 
   async function signup(email, password, userName) {
     const auth = getAuth();
