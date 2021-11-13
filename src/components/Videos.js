@@ -1,8 +1,8 @@
-import Video from './Video';
-import { Link } from 'react-router-dom';
-import { useVideoList } from '../hooks/useVideoList';
-import { useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import Video from "./Video";
+import { Link } from "react-router-dom";
+import { useVideoList } from "../hooks/useVideoList";
+import { useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function Videos() {
   const [page, setPage] = useState(1);
@@ -25,7 +25,12 @@ export default function Videos() {
                 />
               </Link>
             ) : (
-              <Video title={video.title} id={video.youtubeID} noq={video.noq} />
+              <Video
+                title={video.title}
+                id={video.youtubeID}
+                noq={video.noq}
+                key={video.youtubeID}
+              />
             )
           )}
         </InfiniteScroll>

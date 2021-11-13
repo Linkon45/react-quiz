@@ -20,7 +20,7 @@ export const useQuestions = (videoID) => {
         setLoading(false);
         if (snapshot.exists()) {
           setQuestions((prevQuestions) => {
-            return [...prevQuestions, Object.values(snapshot.val())];
+            return [...prevQuestions, ...Object.values(snapshot.val())];
           });
         }
       } catch (err) {
